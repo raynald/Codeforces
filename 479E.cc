@@ -37,7 +37,7 @@ int main() {
         for(int i=1;i<=n;i++) {
             if(i<b) {
                 if(i<b-1) {
-                    dp2[i] = ((accu[(b+i)/2-1]-dp[i])%MAXH+MAXH)%MAXH;
+                    dp2[i] = ((accu[(b+i+1)/2-1]-dp[i])%MAXH+MAXH)%MAXH;
                 }
                 else {
                     if(b>3) dp2[i] = (accu[b-2])%MAXH;
@@ -53,8 +53,8 @@ int main() {
             }
         }
         memcpy(dp,dp2,sizeof(dp2));
-        for(int i=1;i<=n;i++)cout << dp[i]<<" ";
-        cout << endl;
+        //for(int i=1;i<=n;i++)cout << dp[i]<<" ";
+        //cout << endl;
     }
     sum = 0;
     for(int i=1;i<=n;i++) sum=(sum+dp[i])%MAXH;

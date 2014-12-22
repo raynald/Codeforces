@@ -21,7 +21,6 @@ int main() {
 
     cin >> S;
     c = 0;
-    c2 = 0;
     fin = -1;
     flag = 1;
     for(int i=0;i<S.length();i++) {
@@ -41,15 +40,20 @@ int main() {
         }
     }
     if(flag) {
-        for(int i=fin+1;i<S.length();i++) {
+        c2 = 0;
+        for(int i=0;i<S.length();i++) {
             if(S[i]=='(') c2++;
             if(S[i]==')') c2--;
+            if(S[i]=='#') {
+                if(i==fin) {
+                    c2-=(c+1);
+                }
+                else c2--;
+            }
             if(c2<0) {
-                flag = 0;
-                break;
+                flag = 0;break;
             }
         }
-        if(c2>0) flag = 0;
         if(flag) {
             for(int i=0;i<fin;i++) {
                 if(S[i]=='#') cout << 1 << endl;

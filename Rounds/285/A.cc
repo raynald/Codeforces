@@ -49,8 +49,8 @@ set<int>::iterator got;
 int main() {
     int n, t;
     int a, b;
-    int x[64010];
-    int deg[64010];
+    int x[66010];
+    int deg[66010];
     int sum = 0;
 
     cin >> n;
@@ -63,20 +63,19 @@ int main() {
     }
     sum/=2;
     cout << sum <<endl;
-    int count = 0;
-    while() {
-        int tmp = *(mmap.begin());
+    while(mmap.size()>0) {
+        got = mmap.begin();
+        int tmp = *got;
         if(deg[tmp]==1) {
-            count++;
             cout << tmp <<  " " << x[tmp] << endl;
             deg[tmp]--;
             deg[x[tmp]]--;
-            x[x[tmp]]^=tmp;
-            mmap.erase(mmap.begin());
-            if(deg[x[tmp]] == 1 && mmap.find(x[tmp]) == mmap.end()) {
+            x[x[tmp]] ^= tmp;
+            if(deg[x[tmp]] == 1) {
                 mmap.insert(x[tmp]);
             }
         }
+        mmap.erase(got);
    }
     return 0;
 }

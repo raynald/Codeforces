@@ -1,6 +1,6 @@
 Codeforces
 ==========
-### Solutions on [Codeforces](codeforces.com)
+### Solutions on [Codeforces](http://codeforces.com)
 
 ### Author
 * Raynald Chung

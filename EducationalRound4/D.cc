@@ -25,6 +25,7 @@ inline bool comp(cmp &x, cmp &y) {
 int main() {
     ios::sync_with_stdio(false);
     cin >> n >> k;
+    out.reserve(2 * n);
     for(int i=0;i<n;i++){
         cin >> a >> b;
         p.push_back({a, 0, i});
@@ -48,9 +49,9 @@ int main() {
             }
         }
     }
-    cout << out.size() / 2 << endl;
+    printf("%ld\n", out.size() / 2);
     for(int i=0;i<out.size()/2;i++) {
-        cout << out[i * 2] << " " << out[i * 2 + 1] << endl;
+        printf("%d %d\n", out[i * 2] , out[i * 2 + 1]);
     }
     return 0;
 }
